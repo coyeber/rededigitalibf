@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Digital IBF</title>
+    <link rel="stylesheet" href="sistema_ibf_css.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Painel de Boas-vindas -->
+        <div id="welcome-panel" class="panel active">
+            <div class="logo">
+                <h1>IBF</h1>
+                <p>Bem-vindo ao Sistema Digital IBF</p>
+            </div>
+            
+            <button class="btn" onclick="showSearchPanel()">
+                🔍 Pesquisar Colaborador
+            </button>
+            
+            <button class="btn" onclick="showLoginPanel()">
+                👤 Área Administrativa
+            </button>
+        </div>
+
+        <!-- Painel de Pesquisa -->
+        <div id="search-panel" class="panel">
+            <div class="logo">
+                <h1>Pesquisar Colaborador</h1>
+            </div>
+            
+            <div class="input-group">
+                <label for="search-name">Nome ou Código do Colaborador:</label>
+                <input type="text" id="search-name" placeholder="Digite o nome ou código para pesquisar...">
+            </div>
+            
+            <button class="btn" onclick="searchCollaborator()">
+                🔍 Pesquisar
+            </button>
+            
+            <div id="search-results" class="search-results" style="display: none;">
+                <h3>Resultados:</h3>
+                <div id="results-list"></div>
+            </div>
+            
+            <button class="btn back-btn" onclick="showWelcomePanel()">
+                ← Voltar ao Início
+            </button>
+        </div>
+
+        <!-- Painel de Login -->
+        <div id="login-panel" class="panel">
+            <div class="logo">
+                <h1>Área Administrativa</h1>
+                <p>Acesso Restrito</p>
+            </div>
+            
+            <div class="input-group">
+                <label for="username">Usuário:</label>
+                <input type="text" id="username" placeholder="Digite seu usuário">
+            </div>
+            
+            <div class="input-group">
+                <label for="password">Senha:</label>
+                <input type="password" id="password" placeholder="Digite sua senha">
+            </div>
+            
+            <button class="btn" onclick="login()">
+                🔐 Entrar
+            </button>
+            
+            <div id="login-message"></div>
+            
+            <button class="btn back-btn" onclick="showWelcomePanel()">
+                ← Voltar ao Início
+            </button>
+        </div>
+
+        <!-- Painel Administrativo -->
+        <div id="admin-panel" class="panel">
+            <div class="logo">
+                <h1>Painel Administrativo</h1>
+                <p>Gerenciar Colaboradores</p>
+            </div>
+            
+            <div class="input-group">
+                <label for="collaborator-name">Nome do Colaborador:</label>
+                <input type="text" id="collaborator-name" placeholder="Digite o nome completo">
+            </div>
+            
+            <div class="input-group">
+                <label for="collaborator-position">Cargo:</label>
+                <input type="text" id="collaborator-position" placeholder="Digite o cargo">
+            </div>
+            
+            <div class="input-group">
+                <label for="collaborator-code">Código do Contribuinte:</label>
+                <input type="text" id="collaborator-code" placeholder="Digite o código">
+            </div>
+            
+            <button class="btn" onclick="addCollaborator()">
+                ➕ Adicionar Colaborador
+            </button>
+            
+            <div id="admin-message"></div>
+            
+            <div id="collaborators-list" class="collaborator-list" style="display: none;">
+                <h3>Colaboradores Cadastrados:</h3>
+                <div id="admin-collaborators-list"></div>
+            </div>
+            
+            <button class="btn back-btn" onclick="logout()">
+                🚪 Sair
+            </button>
+        </div>
+    </div>
+
+    <script src="sistema_ibf_js.js"></script>
+</body>
+</html>
